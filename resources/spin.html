@@ -1,0 +1,21 @@
+<html>
+
+<head>
+  <title>Universe</title>
+  <script>
+  var count=0;
+  var gallery=setInterval(rotate,1000);
+  gallery()
+  function rotate()
+  {
+    var collection=["galaxy.jpg","universe.jpg","celestial-fireworks.jpg"]
+    count=(count+1)%3;
+    var image=document.getElementById('image');
+    image.src=collection[count];
+  }
+  </script>
+</head>
+<body >
+  <img id="image"/>
+</body>
+</html>

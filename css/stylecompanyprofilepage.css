@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300|Roboto|Raleway');
+.dp{
+  border-radius:50%;
+  border:hidden;
+}
+#dp{
+border-radius:50%;
+height:50px;
+}
+.navbar{
+  padding:0.5%;
+}
+.nav{
+  margin-top:2px;
+}
+.CompanyProfile{
+  margin-top:80px;
+  padding:1%;
+  border:solid black 1px;
+  display:flex;
+  flex-flow:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+.Logo{
+  margin-top:20px;
+  height:150px;
+  width:150px;
+  border:solid; 
+}
+.templates{
+  background-color:lightgrey;
+  min-height:200px;
+  display:flex;
+  flex-flow:row;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:2%;
+  margin:5px;
+}
+h2,h3,h4{
+  font-family:josefin sans;
+  font-weight:bold;
+}
+.jobcards{
+  margin:1%;
+  height:150px;
+  width:150px;
+  border:solid black 1px;
+  flex-shrink:0;
+  margin:2%;
+}

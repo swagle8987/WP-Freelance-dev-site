@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300|Roboto|Raleway');
+.dp{
+  border-radius:50%;
+  border:hidden;
+}
+#dp{
+border-radius:50%;
+height:50px;
+}
+.navbar{
+  padding:0.5%;
+}
+.nav{
+  margin-top:2px;
+}
+.GeneralInfo{
+  border:solid lightgrey 1px;
+  min-height:50px;
+  margin-top:110px;
+  padding:2%;
+  display:flex;
+  flex-flow:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+.profilePic{
+  height:200px;
+  width:200px;
+  border:solid lightgrey 1px;
+}
+#profilPic{
+  height:200px;
+  width:200px;
+}
+.portfolio{
+  border:solid lightgrey 1px;
+  display:flex;
+  flex-flow:row;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:2%;
+  min-height:300px;
+  width:100%;
+}
+.displayframes{
+  margin:10px;
+  border:solid lightgrey 1px;
+  height:200px;
+  width:275px;
+}
+.Stats{
+  border:solid lightgrey 1px;
+  min-height:200px;
+}
+.form{
+  border:solid;
+  margin:0% 10% 5% 10%;
+  float:none;
+  position:fixed;
+  height:60%;
+  background-color:grey;
+  padding:2%;
+  display:none;
+}
+input{
+  padding:2%;
+  width:40%;
+  border-radius:5%;
+  box-shadow:5px 5px lightgrey; 
+}
+textarea{
+  padding-top:1%;
+  padding-bottom:1%;
+  padding-left:2%;
+  padding-right:2%;
+  width:0%;
+}
+select{
+  padding:2%;
+  width:43%;
+  box-shadow:5px 2px lightgrey;
+  border-radius:5%;
+}

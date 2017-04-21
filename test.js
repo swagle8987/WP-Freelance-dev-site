@@ -1,0 +1,209 @@
+var http = require("http");
+var fs= require("fs");
+var url= require("url");
+var qs=require('querystring');
+var mysql=require('mysql');
+//Create a server
+http.createServer(function (request, response){
+  //parse the request containing file name
+  var pathname= url.parse(request.url).pathname;
+
+  //Print the name of the file requested
+  console.log("request made for "+pathname+request.methodWP);
+  var con =mysql.createConnection({
+    host:'localhost',
+    user:'wp',
+    password:'wpproject'
+  });
+  con.connect(function(err){
+    if(err){
+      console.log('Error connnecting to db');
+      return;
+    }
+    console.log('Connection established ');
+  });
+  if(request.method==="POST"){
+
+    if(request.url==="/signup"){
+
+      console.log("accepted submit")
+      var requestBody="";
+      request.on('data',function(data){
+
+        requestBody +=data;
+        console.log("data= "+data );
+        //check if request content is large enough//
+        if(requestBody.length>1e7){
+          response.writeHead(413,"Request Entity too large",{'Content-Type':'text/html'});
+          response.end('<!doctype html><html><head><title>413 Request Error</title></head><body><h1>413</h1><h2>Request entity file size exceeded 10 mb</h2></body></html>');
+        }
+      });
+      console.log(requestBody);
+      request.on('end',function(){
+        var formdata=qs.parse(requestBody);
+        console.log(formdata);
+        response.writeHead(200,"Successful form",{'Content-Type':'text/html'});
+        response.end();
+      })
+    }
+  }
+
+
+  //The Routes//
+  //For home//
+  else if(request.url==="/home")
+  {
+    response.writeHead(200,"Connected",{'Content-Type':'text/html'});
+    fs.createReadStream(__dirname+'/resources/homepage.html',function(err){
+      if(err){
+        throw(err);
+      }
+    }).pipe(response)
+  }
+
+
+  //for profilepage//
+  else if(request.url=="/profilepage")
+  {
+    response.writeHead(200,"Connected",{'Content-Type':'text/html'});
+    fs.createReadStream(__dirname+'/resources/profilepage.html',function(err){
+      if(err){
+        throw(err);
+      }
+    }).pipe(response);
+  }
+
+
+  //for index page//
+  else if (request.url=="/index")
+  {
+    response.writeHead(200,"Connected",{'Content-Type':'text/html'});
+    fs.createReadStream(__dirname+'/resources/index.html',function(err){
+      if(err){
+        throw(err);
+      }
+    }).pipe(response);
+  }
+
+  //For company profilepage//
+  else if(request.url=="/companyprofile")
+  {
+    response.writeHead(200,"Connected",{'Content-Type':'text/html'});
+    fs.createReadStream(__dirname+'/resources/companyprofilepage.html',function(err){
+      if(err){
+        throw(err);
+      }
+    }).pipe(response);
+  }
+
+  //for login//
+  else if(request.url=="/login")
+  {
+    response.writeHead(200,"Connected",{'Content-Type':'text/html'});
+    fs.createReadStream(__dirname+'/resources/login.html',function(err){
+        if(err){
+          throw(err)
+        }
+    }  ).pipe(response);
+
+  }
+  //for json files//
+  else if(request.url==="/data.json")
+  {
+    console.log("json requested")
+    pool.getConnection(function(err,connection){
+      if(!!err){
+        connection.release();
+        console.log(err);
+      }
+
+      else {
+        response.writeHead(200,"connected",{'Content-Type':'text/plain'});
+        connection.query("select * from users where uid=?",[1],function(er,data){
+
+          if(!!er){
+            console.log(er);
+          }
+
+          else{
+	            response.write(JSON.stringify(data));
+            response.end();
+          }
+        })
+      }
+    })
+  }
+
+  //for database//
+  else if(request.url==="/dab.html"){
+    response.writeHead(200,"connected to database",{"Content-Type":'text/html'});
+    fs.createReadStream(__dirname+"/dab.html",function(err){
+      if(err) throw err;
+    }).pipe(response);
+  }
+
+
+  //For spin//
+  else if(request.url==="/spin.html"){
+    response.writeHead(200,"Connected to spin",{'Content-Type':'text/html'});
+    fs.createReadStream(__dirname+"/resources/spin.html",function(err){
+      if(err){
+        throw(err);
+      }
+    }).pipe(response)
+  }
+
+
+  //Handling resource requests//
+  else if(request.method==="GET"){
+    //For image files//
+    if(request.url.match(/jpg$/)||request.url.match(/png$/) || request.url.match(/jpeg$/)){
+      response.writeHead(200,"image request acknowledged");
+      fs.createReadStream(__dirname+"/resources"+request.url,function(err){
+        if(err){
+          throw(err);
+        }
+      }).pipe(response);
+    }
+
+
+    //For js files//
+    else if(request.url.match(/js$/)){
+      response.writeHead(200,"javascript request acknowledged");
+      fs.createReadStream(__dirname+"/javascript"+request.url,function(err){
+        if(err){
+          throw(err);
+        }
+      }).pipe(response);
+    }
+
+
+    //For css files//
+    else if(request.url.match(/css$/)){
+      response.writeHead(200,"css request acknowledged");
+      console.log("css requested")
+      fs.createReadStream(__dirname+"/css"+request.url,function(err){
+        if(err){
+          throw(err);
+        }
+      }).pipe(response);
+    }
+
+
+    //if resource not found.//
+    else{
+      response.writeHead(404,"Resource requested is unavailable",{'Content-Type':'text/plain'});
+      response.end("Resource "+request.url+" is unavailable");
+    }
+
+  }
+
+    //if page not found//
+    else{
+      response.writeHead(404,"Page not found",{'Content-Type':'text/html'});
+      response.end("<html><head><title>404</title></head><body><h1>404</h1><h2>Page not found</h2></body></html>")
+    }
+
+}).listen(3000);
+
+console.log("Server is running");

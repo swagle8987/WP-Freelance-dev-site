@@ -1,0 +1,51 @@
+*{
+  margin:0px;
+}
+.dp{
+  border-radius:50%;
+  border:hidden;
+}
+#dp{
+border-radius:50%;
+height:50px;
+}
+.navbar{
+  padding:0.5%;
+}
+.nav{
+  margin-top:2px;
+}
+.avlbljobs{
+  background-color:lightgrey;
+  min-height:200px;
+  margin-top:60px;
+  display:flex;
+}
+.projectDetails{
+  height:30%;
+  padding:1%;
+  display:flex;
+  flex-flow:row;
+  flex-wrap:wrap;
+  border:solid grey 2px;
+}
+.prjctdp{
+  margin-top:10px;
+  border:none;
+  padding:1%;
+  height:150px;
+}
+.prjctname{
+  width:65%;
+}
+.actionbar{
+  width:100%;
+  display:flex;
+  flex-flow:row-reverse;
+  justify-content:space-around;
+  padding:1%;
+  margin:2%;
+}
+span{
+  color:deepskyblue;
+}

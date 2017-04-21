@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>collegeProject</title>
+
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="styleindex.css">
+
+
+</head>
+
+<body>
+  <body>
+<div class="container-fluid home">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="home">Freelance</a>
+        </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Hire a freelancer</a></li>
+            <li><a href="#">Login</a></li>
+            <li>
+              <a class="btn btn-default btn-outline btn-circle"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Find </a>
+            </li>
+          </ul>
+          <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
+            <li><a href="#">Web design</a></li>
+            <li><a href="#">Development</a></li>
+            <li><a href="#">Graphic design</a></li>
+            <li><a href="#">Print</a></li>
+            <li><a href="#">Motion</a></li>
+            <li><a href="#">Mobile apps</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <div id="intro" class="container-fluid">
+    <div id="brand" class="text-center">Freelance</div>
+    <div id="tagline" class="text-center">Break Free.</div>
+  </div>
+    <div class="join text-center">
+  <button class="btn" id="joinbtn">Sign Up</button>
+  </div>
+  <div class="form text-center" id="form1">
+  <center><h1>Freelancer Registration</h1>
+    <form method="post" enctype="multipart/form-data"> <br><br>
+      <input type="text" placeholder="Username" id="uname" required="enter username"><br><br>
+      <input type="text" placeholder="First Name" id="fname" required="enter first name"><br><br>
+      <input type="text" placeholder="Last Name" id="lname" required="enter last name"><br><br>
+      <input type="password" placeholder="Password" id="passw" required="enter the password">
+      <p id="retype">
+      </p>
+      </p><br><br> Field of Interest:-<br>
+      <input type="password" placeholder="confirm password" id="passworderror" required="please confirm your password"><br><br> Field of Interest:-<br>
+
+      <select>
+   <option>Select a category of work </option>
+   <option>Websites and Software </option>
+   <option>Mobile </option>
+   <option>Writing </option>
+   <option>Design </option>
+   <option>Data Entry </option>
+   <option>Product Manufacturing </option>
+   <option>Sales & Marketing </option>
+   <option>Business and Accounting </option>
+   <option>Local jobs & Services </option>
+   <option>Customized</option>
+   </select><br><br> Upload Certificates:-<br>
+      <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+      <textarea rows="3" placeholder="About Me"></textarea> <br><br>
+
+      <button type="submit" class="btn btn-primary">Register Now</button>
+    </form>
+  </center>
+</div>
+      <div class="quote text-center">
+  <button class="btn" id="qtbtn">Get free Quotes</button>
+  </div>
+   <div class="form text-center" id="form2">
+<h1>Get a free quote</h1>
+ <form> <br><br>
+ <input type="text"  placeholder="Project Name" id="pname"><br><br>
+ Project Type<br><br>
+ <select>
+   <option>Select a category of work </option>
+   <option>Websites and Software </option>
+   <option>Mobile </option>
+   <option>Writing </option>
+   <option>Design </option>
+   <option>Data Entry </option>
+   <option>Product Manufacturing </option>
+   <option>Sales & Marketing </option>
+   <option>Business and Accounting </option>
+   <option>Local jobs & Services </option>
+   <option>Customized</option>
+   </select><br><br>
+<input type="text" id="cname" placeholder="Company Name">
+ <br><br>
+     <input type="text" id="creg" placeholder="Company Registration No.">
+ <br><br>
+     Budget<br><br>
+     <select>
+       <option>600 - 1500 INR </option>
+       <option>1500 - 12500 INR </option>
+       <option>12500 - 37500 INR </option>
+       <option>37500 - 75000 INR </option>
+       <option>75000 - 150000 INR </option>
+       <option>150000 - 250000 INR </option>
+       <option>250000 - 500000 INR </option>
+        <option>500000 - 1000000 INR </option>
+       <option>1000000 - 2500000 INR </option>
+       <option> > 2500000 INR </option>      <select><br><br>
+       <textarea rows="3" placeholder="Project Description"></textarea> <br><br>
+        <button type="submit" class="btn btn-primary">Post Project Now</button>
+   </form>
+  </div>
+  </div>
+  <div class="text-center">
+   <h3>Get your Job done!</h3>
+  <div class="templates">
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    </div>
+  </div>
+  <div class="customers text-center">
+  <h3>Our satisfied customers.</h3>
+      <div class="templates">
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    <div class="jobcards"></div>
+    </div>
+  </div>
+  <div class="text-center">
+  <h3>About Us</h3><br/>
+    <h4>This site is developed by</h4>
+    <div class="row">
+    <div class="col-sm-4 text-center">
+      <h4>Karishma Zambare</h4>
+      </div>
+    <div class="col-sm-4 text-center">
+      <h4>Sanket Wagle</h4></div>
+    <div class="col-sm-4 text-center">
+      <h4>Kaustubh Toraskar</h4></div>
+    </div>
+  </div>
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
